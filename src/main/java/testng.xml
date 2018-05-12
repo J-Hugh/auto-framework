@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name='AutoTest'>
+	<test verbose="10" name="AutoTest">
+		<classes>
+			<class name="com.auto.AutoTest"/>	
+		</classes>
+	</test>
+</suite>

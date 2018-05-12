@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Aug 24 10:41:10 CST 2016
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=WebAutoJar_fat.jar
+manifest.mergeall=true
+manifest.mainclass=com.auto.main.Start
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
