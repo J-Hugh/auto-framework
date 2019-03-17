@@ -1,12 +1,17 @@
 package com.auto.driver;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 
 
 import org.apache.commons.lang.StringUtils;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.util.CollectionUtils;
 
 import com.auto.Util.DataSet;
@@ -40,7 +45,17 @@ public class WEBdriverImpl extends BaseDriver  {
 		}
 		System.out.println("-------请求的系统:"+URL);
 		//本机测试时使用
-		webDriver = webDriver==null?new FirefoxDriver():webDriver;
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
+		//
+		Map<String,String> mobileEmulation = new HashMap<String,String>();
+		//設置设备
+		mobileEmulation.put("deviceName","iPhone X");
+		Map<String,Object> chromeOptions=new HashMap<String,Object>();
+		chromeOptions.put("mobileEmulation",mobileEmulation);
+		DesiredCapabilities capabilities=DesiredCapabilities.chrome();
+		capabilities.setCapability(ChromeOptions.CAPABILITY,chromeOptions);
+		//webDriver=new ChromeDriver(capabilities);
+		webDriver = webDriver==null?new ChromeDriver(capabilities):webDriver;
 		//使用分布式进行测试
 		//		DesiredCapabilities capabilities = new DesiredCapabilities();
 		//		

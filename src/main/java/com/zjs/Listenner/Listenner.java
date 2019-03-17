@@ -67,7 +67,7 @@ public class Listenner extends TestListenerAdapter{
     	String id = String.valueOf(++ number);
     	String className = tr.getTestClass().getName();
     	if(config==null){
-    		config=	PropertiesUtil.getProperties("/data-config.properties");
+    		config=	PropertiesUtil.getProperties("data-config.properties");
     	}
     	String path=config.getProperty("FILE_EXCEL_PATH");
 		String fileName=config.getProperty("FILE_EXCEL_name");
